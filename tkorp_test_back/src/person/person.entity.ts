@@ -18,9 +18,6 @@ export class Person {
   @Column()
   phoneNumber: string;
 
-  @Column()
-  created_at: Date;
-
   @OneToMany(() => Animal, (animal) => animal.owner)
   animals: Animal[];
 }
