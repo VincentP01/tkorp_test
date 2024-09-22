@@ -17,7 +17,7 @@ import { Person } from './person/person.entity';
       password: process.env.PASSWORD,
       database: process.env.DB_NAME,
       entities: [Person, Animal],
-      synchronize: true,
+      synchronize: false,
       logging: true,
     }),
     PersonModule,
