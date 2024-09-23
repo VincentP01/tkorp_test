@@ -10,15 +10,3 @@ CREATE TABLE person (
   phoneNumber VARCHAR(50),
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
-
-CREATE TABLE animal (
-  id INT AUTO_INCREMENT PRIMARY KEY,
-  name VARCHAR(50) NOT NULL,
-  dateOfBirth DATE NOT NULL,
-  species VARCHAR(100) NOT null,
-  breed text,
-  color varchar(50),
-  weight int,
-  ownerId int,
-  FOREIGN KEY (ownerId) REFERENCES person(id)
-);
