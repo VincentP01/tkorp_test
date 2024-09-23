@@ -7,14 +7,14 @@ import { Person } from './person.entity';
 export class PersonService {
   constructor(
     @InjectRepository(Person)
-    private personsRepository: Repository<Person>,
+    private ownersRepository: Repository<Person>,
   ) {}
 
   findAll(): Promise<Person[]> {
-    return this.personsRepository.find();
+    return this.ownersRepository.find();
   }
 
   findOne(id: number): Promise<Person> {
-    return this.personsRepository.findOneBy({ id });
+    return this.ownersRepository.findOneBy({ id });
   }
 }
