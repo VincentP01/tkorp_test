@@ -18,10 +18,23 @@ export class AnimalService {
     return this.animalsRepository.findOneBy({ id });
   }
 
-  async findByOwnerId(ownerId: number): Promise<Animal[]> {
-    return this.animalsRepository.find({
-      where: { ownerId },
-      relations: ['owner'],
-    });
+  findOwnerNameByOwnerId(
+    ownerId: number,
+  ): Promise<{ firstName: string; lastName: string } | null> {
+    return this.animalsRepository
+      .findOne({
+        where: { ownerId },
+        relations: ['owner'],
+      })
+      .then((animal) => {
+        if (animal && animal.owner) {
+          return {
+            id: animal.owner.id,
+            firstName: animal.owner.firstName,
+            lastName: animal.owner.lastName,
+          };
+        }
+        return null;
+      });
   }
 }

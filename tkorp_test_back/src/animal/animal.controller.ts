@@ -13,11 +13,17 @@ export class AnimalController {
 
   @Get(':id')
   async findOne(@Param('id') id: string) {
-    return this.animalService.findOne(+id);
-  }
+    // Trouve l'animal par son ID
+    const animal = await this.animalService.findOne(+id);
 
-  @Get('owner/:ownerId')
-  async findByOwnerId(@Param('ownerId') ownerId: string): Promise<Animal[]> {
-    return this.animalService.findByOwnerId(+ownerId);
+    // Si l'animal a un ownerId, récupère les informations du propriétaire
+    if (animal && animal.ownerId) {
+      const owner = await this.animalService.findOwnerNameByOwnerId(
+        animal.ownerId,
+      );
+      return { ...animal, owner }; // Renvoie l'animal avec les détails du propriétaire
+    }
+
+    return animal;
   }
 }
