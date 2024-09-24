@@ -17,4 +17,11 @@ export class AnimalService {
   findOne(id: number): Promise<Animal> {
     return this.animalsRepository.findOneBy({ id });
   }
+
+  async findByOwnerId(ownerId: number): Promise<Animal[]> {
+    return this.animalsRepository.find({
+      where: { ownerId },
+      relations: ['owner'],
+    });
+  }
 }

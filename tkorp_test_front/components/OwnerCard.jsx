@@ -1,7 +1,6 @@
 import Link from "next/link";
 
 export default function OwnerCard({ data }) {
-  console.log("data : ", data);
   return (
     <div className="grid grid-cols-3 gap-4 px-4 justify-items-center">
       {data.map((person) => (

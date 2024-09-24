@@ -1,4 +1,4 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, Param } from '@nestjs/common';
 import { AnimalService } from './animal.service';
 import { Animal } from './animal.entity';
 
@@ -9,5 +9,15 @@ export class AnimalController {
   @Get()
   async findAll(): Promise<Animal[]> {
     return this.animalService.findAll();
+  }
+
+  @Get(':id')
+  async findOne(@Param('id') id: string) {
+    return this.animalService.findOne(+id);
+  }
+
+  @Get('owner/:ownerId')
+  async findByOwnerId(@Param('ownerId') ownerId: string): Promise<Animal[]> {
+    return this.animalService.findByOwnerId(+ownerId);
   }
 }

@@ -15,6 +15,9 @@ export class PersonService {
   }
 
   findOne(id: number): Promise<Person> {
-    return this.ownersRepository.findOneBy({ id });
+    return this.ownersRepository.findOne({
+      where: { id },
+      relations: ['animals'],
+    });
   }
 }
