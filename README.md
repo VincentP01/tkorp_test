@@ -1,6 +1,21 @@
 <h1 align="center" id="title">Owners and Pets</h1>
 
-<p id="description">Projet Fullstack de création d'une API et d'une interface affichant les données de celle-ci.</p>
+# Owners and Pets
+
+## Description
+Projet Fullstack de création d'une API et d'une interface affichant les données de celle-ci.
+
+## Structure du Projet
+
+/tkorp_test_back
+&nbsp;/src
+&nbsp;&nbsp;/animal
+&nbsp;&nbsp;/person
+/tkorp_test_front
+&nbsp;/app
+&nbsp;&nbsp;/animals
+&nbsp;&nbsp;/owners
+&nbsp;/components
 
 <h2>🛠️ Installation Steps:</h2>
 
