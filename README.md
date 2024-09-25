@@ -7,15 +7,15 @@ Projet Fullstack de création d'une API et d'une interface affichant les donnée
 
 ## Structure du Projet
 
-/tkorp_test_back
-&nbsp;/src
-&nbsp;&nbsp;/animal
-&nbsp;&nbsp;/person
-/tkorp_test_front
-&nbsp;/app
-&nbsp;&nbsp;/animals
-&nbsp;&nbsp;/owners
-&nbsp;/components
+/tkorp_test_back<br>
+&nbsp;/src<br>
+&nbsp;&nbsp;/animal<br>
+&nbsp;&nbsp;/person<br>
+/tkorp_test_front<br>
+&nbsp;/app<br>
+&nbsp;&nbsp;/animals<br>
+&nbsp;&nbsp;/owners<br>
+&nbsp;/components<br>
 
 <h2>🛠️ Installation Steps:</h2>
 
