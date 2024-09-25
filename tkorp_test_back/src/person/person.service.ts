@@ -10,8 +10,10 @@ export class PersonService {
     private ownersRepository: Repository<Person>,
   ) {}
 
-  findAll(): Promise<Person[]> {
-    return this.ownersRepository.find();
+  findAll(page: number = 1): Promise<Person[]> {
+    const take = 15;
+    const skip = (page - 1) * take;
+    return this.ownersRepository.find({ skip, take });
   }
 
   findOne(id: number): Promise<Person> {
