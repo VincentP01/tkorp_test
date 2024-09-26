@@ -10,7 +10,6 @@ import {
 } from '@nestjs/common';
 import { PersonService } from './person.service';
 import { Person } from './person.entity';
-import { PersonModule } from './person.module';
 
 @Controller('owners')
 export class PersonController {
