@@ -37,11 +37,11 @@ Sur votre logiciel de gestion de base de données exécuter successivement les r
 ### 2. Configurer les variables d'environnements
 
 Créer votre fichier .env dans à la source de votre dossier 'tkorp_test_back', sous cette forme :
-HOST=
-PORT_DB=
-USERNAME_DB=
-PASSWORD=
-DB_NAME=
+HOST=<br>
+PORT_DB=<br>
+USERNAME_DB=<br>
+PASSWORD=<br>
+DB_NAME=<br>
 PORT_SERVER=
 
 ### 3. Lancer les serveurs
