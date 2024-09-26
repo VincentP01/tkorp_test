@@ -24,9 +24,9 @@ Projet Fullstack de création d'une API et d'une interface affichant les donnée
     └───components
 ```
 
-<h2>🛠️ Installation Steps:</h2>
+## 🛠️ Installation Steps:
 
-<p>1. Initialisation de la base de données + seeding</p>
+### 1. Initialisation de la base de données + seeding
 
 Sur votre logiciel de gestion de base de données exécuter successivement les requêtes contenues dans les fichiers :
 - db.creation.sql
@@ -34,7 +34,7 @@ Sur votre logiciel de gestion de base de données exécuter successivement les r
 - person_fulfil.sql
 - animal_fulfil.sql
 
-<p>2. Configurer les variables d'environnements</p>
+### 2. Configurer les variables d'environnements
 
 Créer votre fichier .env dans à la source de votre dossier 'tkorp_test_back', sous cette forme :
 HOST=
@@ -44,25 +44,25 @@ PASSWORD=
 DB_NAME=
 PORT_SERVER=
 
-<p>3. Lancer les serveurs</p>
+### 3. Lancer les serveurs
 
-- NestJS
+#### NestJS
   Sur le terminal, placez-vous dans le dossier 'tkorp_test_back' et lancez :
 ```
 npm run start
 ```
 
-- NextJS
+#### NextJS
   Sur le terminal, placez-vous dans le dossier 'tkorp_test_front' et lancez :
 ```
 npm run dev
 ```
 
-<p>4. Accéder à l'application</p>
+### 4. Accéder à l'application
 
 Accédez à l'application via `http://localhost:8000`.
   
-<h2>💻 Built with</h2>
+## 💻 Built with
 
 Technologies used in the project:
 
