@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import Emojis from "@/components/Emojis";
 
-export default function AniamlPage() {
+export default function AnimalPage() {
   const { id } = useParams();
   const [data, setData] = useState(null);
   const [isLoading, setLoading] = useState(true);

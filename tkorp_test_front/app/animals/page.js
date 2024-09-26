@@ -1,11 +1,15 @@
-import AnimalCard from "@/components/AnimalCard";
+import AnimalClientComponent from "@/components/AnimalClientComponent";
 
 export default async function Page() {
-  const data = await fetch("http://127.0.0.1:3000/animals");
-  const json = await data.json();
-  if (!json) return <p>No animal data</p>;
+  const data = await fetch("http://127.0.0.1:3000/animals?page=1");
+  const { animals: initialAnimals, total } = await data.json();
 
-  console.log("here's the animal data : ", data);
+  const totalPages = Math.ceil(total / 12);
 
-  return <AnimalCard data={json} />;
+  return (
+    <AnimalClientComponent
+      initialAnimals={initialAnimals}
+      totalPages={totalPages}
+    />
+  );
 }

@@ -10,10 +10,18 @@ export class PersonService {
     private ownersRepository: Repository<Person>,
   ) {}
 
-  findAll(page: number = 1): Promise<Person[]> {
-    const take = 15;
+  async findAll(
+    page: number = 1,
+  ): Promise<{ owners: Person[]; total: number }> {
+    const take = 12;
     const skip = (page - 1) * take;
-    return this.ownersRepository.find({ skip, take });
+
+    const [owners, total] = await this.ownersRepository.findAndCount({
+      skip,
+      take,
+    });
+
+    return { owners, total };
   }
 
   findOne(id: number): Promise<Person> {

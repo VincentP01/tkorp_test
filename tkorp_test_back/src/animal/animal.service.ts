@@ -10,8 +10,18 @@ export class AnimalService {
     private animalsRepository: Repository<Animal>,
   ) {}
 
-  findAll(): Promise<Animal[]> {
-    return this.animalsRepository.find();
+  async findAll(
+    page: number = 1,
+  ): Promise<{ animals: Animal[]; total: number }> {
+    const take = 12;
+    const skip = (page - 1) * take;
+
+    const [animals, total] = await this.animalsRepository.findAndCount({
+      skip,
+      take,
+    });
+
+    return { animals, total };
   }
 
   findOne(id: number): Promise<Animal> {

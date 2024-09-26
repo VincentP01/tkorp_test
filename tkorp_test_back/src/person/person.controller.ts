@@ -7,8 +7,9 @@ export class PersonController {
   constructor(private readonly personService: PersonService) {}
   //localhost:3000/users
   @Get()
-  async findAll(@Query('page') page: number = 1): Promise<Person[]> {
-    return this.personService.findAll(page);
+  async findAll(@Query('page') page: number = 1) {
+    const { owners, total } = await this.personService.findAll(page);
+    return { owners, total };
   }
 
   @Get(':id')
