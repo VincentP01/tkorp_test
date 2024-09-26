@@ -46,13 +46,13 @@ PORT_SERVER=
 
 ### 3. Lancer les serveurs
 
-#### NestJS
+#### Backend (NestJS)
   Sur le terminal, placez-vous dans le dossier 'tkorp_test_back' et lancez :
 ```
 npm run start
 ```
 
-#### NextJS
+#### Frontend (NextJS)
   Sur le terminal, placez-vous dans le dossier 'tkorp_test_front' et lancez :
 ```
 npm run dev
