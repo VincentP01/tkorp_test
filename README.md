@@ -11,7 +11,7 @@ Projet Fullstack de création d'une API et d'une interface affichant les donnée
 │   ├───dist
 │   │   ├───animal
 │   │   └───person
-│   ├───src
+│   └───src
 │       ├───animal
 │       └───person
 └───tkorp_test_front
