@@ -72,22 +72,22 @@ Technologies used in the project:
 
 
 ## Réponses aux questions :
-○ Quel animal est le plus vieux ?
+○ Quel animal est le plus vieux ?<br>
 Rocky, le lapin (21/09/2009)
 
-○ Quelle espèce est la mieux représentée ? (Le plus d’entité de cette espèce)
+○ Quelle espèce est la mieux représentée ? (Le plus d’entité de cette espèce)<br>
 179 oiseaux
 
-○ Quelle personne possède le plus d’animaux ?
+○ Quelle personne possède le plus d’animaux ?<br>
 Ex aequo Michael Taylor (id: 208), Sarah White (268) et Sophia Brown (18)
 
-○ Quelle personne possède le plus de chats ?
+○ Quelle personne possède le plus de chats ?<br>
 Sarah White
 
 ○ Qui possède l’animal le plus lourd ? Comment s’appelle cet animal et quel est
-son poids ?
+son poids ?<br>
 Emma Smith (209) avec un chien (Chloe) pesant 49937g
 
 ○ Qui possède le groupe d’animaux le plus lourd ? Quel est le poids total de ce
-groupe d’animaux ?
+groupe d’animaux ?<br>
 Sophia Brown avec un groupe pesant 172152g
