@@ -1,4 +1,4 @@
-import { Controller, Get, Param } from '@nestjs/common';
+import { Controller, Get, Param, Query } from '@nestjs/common';
 import { AnimalService } from './animal.service';
 import { Animal } from './animal.entity';
 
@@ -7,8 +7,9 @@ export class AnimalController {
   constructor(private readonly animalService: AnimalService) {}
   //localhost:3000/users
   @Get()
-  async findAll(): Promise<Animal[]> {
-    return this.animalService.findAll();
+  async findAll(@Query('page') page: number = 1) {
+    const { animals, total } = await this.animalService.findAll(page);
+    return { animals, total };
   }
 
   @Get(':id')

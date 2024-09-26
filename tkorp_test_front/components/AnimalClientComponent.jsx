@@ -1,35 +1,33 @@
-// components/OwnerClientComponent.tsx - Composant client
-
 "use client";
 
 import { useState, useEffect } from "react";
-import OwnerCard from "@/components/OwnerCard";
+import AnimalCard from "@/components/AnimalCard";
 
-export default function OwnerClientComponent({ initialOwners, totalPages }) {
-  const [owners, setOwners] = useState(initialOwners || []);
+export default function AnimalClientComponent({ initialAnimals, totalPages }) {
+  const [animals, setAnimals] = useState(initialAnimals || []);
   const [page, setPage] = useState(1); // Page 1 already loaded
 
-  const fetchOwners = async (newPage) => {
-    const data = await fetch(`http://127.0.0.1:3000/owners?page=${newPage}`);
+  const fetchAnimals = async (newPage) => {
+    const data = await fetch(`http://127.0.0.1:3000/animals?page=${newPage}`);
     const json = await data.json();
-    setOwners(json.owners);
+    setAnimals(json.animals);
     setPage(newPage);
   };
 
   const handleNextPage = () => {
     if (page < totalPages) {
-      fetchOwners(page + 1);
+      fetchAnimals(page + 1);
     }
   };
   const handlePrevPage = () => {
     if (page > 1) {
-      fetchOwners(page - 1);
+      fetchAnimals(page - 1);
     }
   };
 
   return (
     <div>
-      <OwnerCard data={owners} />
+      <AnimalCard data={animals} />
       <div className="pagination-controls mt-12 flex justify-center space-x-4">
         <button
           onClick={handlePrevPage}
