@@ -37,11 +37,11 @@ Sur votre logiciel de gestion de base de données exécuter successivement les r
 ### 2. Configurer les variables d'environnements
 
 Créer votre fichier .env dans à la source de votre dossier 'tkorp_test_back', sous cette forme :
-HOST=
-PORT_DB=
-USERNAME_DB=
-PASSWORD=
-DB_NAME=
+HOST=<br>
+PORT_DB=<br>
+USERNAME_DB=<br>
+PASSWORD=<br>
+DB_NAME=<br>
 PORT_SERVER=
 
 ### 3. Lancer les serveurs
@@ -69,3 +69,25 @@ Technologies used in the project:
 *   NestJS
 *   TypeORM
 *   NextJS
+
+
+## Réponses aux questions :
+○ Quel animal est le plus vieux ?<br>
+Rocky, le lapin (21/09/2009)
+
+○ Quelle espèce est la mieux représentée ? (Le plus d’entité de cette espèce)<br>
+179 oiseaux
+
+○ Quelle personne possède le plus d’animaux ?<br>
+Ex aequo Michael Taylor (id: 208), Sarah White (268) et Sophia Brown (18)
+
+○ Quelle personne possède le plus de chats ?<br>
+Sarah White
+
+○ Qui possède l’animal le plus lourd ? Comment s’appelle cet animal et quel est
+son poids ?<br>
+Emma Smith (209) avec un chien (Chloe) pesant 49937g
+
+○ Qui possède le groupe d’animaux le plus lourd ? Quel est le poids total de ce
+groupe d’animaux ?<br>
+Sophia Brown avec un groupe pesant 172152g
