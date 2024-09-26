@@ -6,23 +6,23 @@
 Projet Fullstack de création d'une API et d'une interface affichant les données de celle-ci.
 
 ## Structure du Projet
-
-├───tkorp_test_back<br>
-│   ├───dist<br>
-│   │   ├───animal<br>
-│   │   └───person<br>
-│   ├───src<br>
-│   │   ├───animal<br>
-│   │   └───person<br>
-│   └───test<br>
-└───tkorp_test_front<br>
-    ├───app<br>
-    │   ├───animals<br>
-    │   │   └───[id]<br>
-    │   ├───fonts<br>
-    │   └───owners<br>
-    │       └───[id]<br>
-    └───components<br>
+```
+├───tkorp_test_back
+│   ├───dist
+│   │   ├───animal
+│   │   └───person
+│   ├───src
+│       ├───animal
+│       └───person
+└───tkorp_test_front
+    ├───app
+    │   ├───animals
+    │   │   └───[id]
+    │   ├───fonts
+    │   └───owners
+    │       └───[id]
+    └───components
+```
 
 <h2>🛠️ Installation Steps:</h2>
 
