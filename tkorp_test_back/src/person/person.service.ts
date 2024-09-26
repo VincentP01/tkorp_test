@@ -30,4 +30,17 @@ export class PersonService {
       relations: ['animals'],
     });
   }
+  create(personData: Partial<Person>): Promise<Person> {
+    const newPerson = this.ownersRepository.create(personData);
+    return this.ownersRepository.save(newPerson);
+  }
+
+  async update(id: number, updateData: Partial<Person>): Promise<Person> {
+    await this.ownersRepository.update(id, updateData);
+    return this.findOne(id);
+  }
+
+  async remove(id: number): Promise<void> {
+    await this.ownersRepository.delete(id);
+  }
 }

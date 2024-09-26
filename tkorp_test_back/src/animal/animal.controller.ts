@@ -1,10 +1,23 @@
-import { Controller, Get, Param, Query } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Get,
+  Post,
+  Patch,
+  Delete,
+  Param,
+  Query,
+} from '@nestjs/common';
 import { AnimalService } from './animal.service';
 import { Animal } from './animal.entity';
+import { PersonService } from 'src/person/person.service';
 
 @Controller('animals')
 export class AnimalController {
-  constructor(private readonly animalService: AnimalService) {}
+  constructor(
+    private readonly animalService: AnimalService,
+    private readonly personService: PersonService,
+  ) {}
   //localhost:3000/users
   @Get()
   async findAll(@Query('page') page: number = 1) {
@@ -26,5 +39,31 @@ export class AnimalController {
     }
 
     return animal;
+  }
+
+  @Post()
+  async create(@Body() animalData: Partial<Animal>): Promise<Animal> {
+    const owner = await this.personService.findOne(animalData.ownerId);
+    if (!owner) {
+      throw new Error("Le propriétaire spécifié n'existe pas");
+    }
+    return this.animalService.create(animalData);
+  }
+  @Patch(':id')
+  async update(
+    @Param('id') id: string,
+    @Body() updateData: Partial<Animal>,
+  ): Promise<Animal> {
+    if (updateData.ownerId) {
+      const owner = await this.personService.findOne(updateData.ownerId);
+      if (!owner) {
+        throw new Error("Le propriétaire spécifié n'existe pas");
+      }
+    }
+    return this.animalService.update(+id, updateData);
+  }
+  @Delete('id')
+  async remove(@Param('id') id: string): Promise<void> {
+    return this.animalService.remove(+id);
   }
 }
